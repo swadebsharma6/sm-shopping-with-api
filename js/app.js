@@ -37,11 +37,16 @@ setAllMenu()
 const searchField = document.getElementById('search-field');
 
 searchField.addEventListener('keypress', async(event)=>{
-    // console.log(event.key);
+    /**--spiner start--**/ 
+    const spinner = document.getElementById('spinner');
+    spinner.classList.remove('hidden');
+
     // condition
     if(event.key === 'Enter'){
         const searchValue = searchField.value;
         const allProducts = await loadAllProducts();
+        /**--spinner close--**/ 
+        spinner.classList.add('hidden');
 
         const foundProducts = allProducts.filter(product => product.category.includes(searchValue));
         console.log(foundProducts);
