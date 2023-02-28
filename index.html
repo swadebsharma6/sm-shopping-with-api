@@ -10,16 +10,46 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="mb-4">
+    <header class="my-4">
         <div class="form-control w-50 mx-auto max-w-xs">
             <label class="label">
               <span class="label-text">Search Your Product?</span>
               <span class="label-text-alt">Press<kbd class="kbd kbd-sm"> Enter </kbd></span>
             </label>
-            <input type="text" placeholder="Search here" class="input input-bordered w-full max-w-xs" />
-            
-          </div>
+            <input id="search-field" type="text" placeholder="Search here" class="input input-bordered w-full max-w-xs" />
+           </div>
     </header>
+
+    <!-- main -->
+    <main>
+        <section class="m-5">
+            <!-- container -->
+            <div class="flex ...">
+               <!-- menu -->
+               <div class="flex-none ">
+                <h4 class="text-center">Menu</h4>
+                <ul id="all-menu" class="menu w-56 bg-secondary text-secondary-content p-2 rounded-box">
+                    <!-- <li><a>Item 1</a></li>
+                    <li><a>Item 2</a></li>
+                    <li><a>Item 3</a></li> -->
+                  </ul>
+              </div>
+               <!-- menu -->
+                <!-- products -->
+                <div class="grow ml-4 pl-4 ">
+                   <h4 class="text-center">Products</h4>
+                   <!-- p-container -->
+                   <div  id="product-container" class="grid grid-cols-4 gap-4">
+
+                   </div>
+                   <!-- p-container -->
+                  </div>
+                <!-- products -->
+              </div>
+            <!-- container -->
+        </section>
+    </main>
+    <!-- main -->
 
 
     <!-- script -->
