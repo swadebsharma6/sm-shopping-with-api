@@ -51,7 +51,7 @@ searchField.addEventListener('keypress', async(event)=>{
              container.innerHTML = '';
 
         foundProducts.forEach(element => {
-            const {title, price, image,category} = element;
+            const {title, price, image,category,description} = element;
             console.log(element);
             const div = document.createElement('div');
             div.innerHTML = `
@@ -63,7 +63,7 @@ searchField.addEventListener('keypress', async(event)=>{
                     <h2 class="card-title">${category}</h2>
                     <p>${title.slice(0,10)}</p>
                     <div class="card-actions">
-                    <button class="btn btn-primary">Show Details</button>
+                    <label onclick="showDetails('${image}', '${price}', '${description}' )" for="my-modal" class="btn btn-primary">Show Details</label>
                     </div>
                 </div>
                 </div>
@@ -74,4 +74,15 @@ searchField.addEventListener('keypress', async(event)=>{
         
     }
 })
+
+const showDetails = (image, price, description) =>{
+    const modalBody = document.getElementById('modal-body');
+    modalBody.innerHTML = `
+     <div>
+     <img src="${image}" class='rounded-xl h-60 w-full' alt="">
+     </div>
+     <h4>Price:$ ${price}</h4>
+     <p>Description:${description}</p>
+    `;
+}
 
